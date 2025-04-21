@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatórios</title>
+  <link rel="stylesheet" href="relatorios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="../global.css" />
+  <script src="../menu.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="relatorios.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Relatórios</h1>
+    <div class="filtros">
+      <label for="filtroDataInicial">De:</label>
+      <input type="date" id="filtroDataInicial">
+      <label for="filtroDataFinal">Até:</label>
+      <input type="date" id="filtroDataFinal">
+    </div>
+
+    <div class="botoes">
+      <button onclick="gerarPDFEntregasSimples()">Relatório de Entregas</button>
+      <button onclick="gerarPDFCombustivelSimples()">Relatório de Combustível</button>
+      <button onclick="gerarPDFChecklistSimples()">Relatório de Checklist</button>
+      <button onclick="gerarPDFManutencaoSimples()">Relatório de Manutenção</button>
+      <button onclick="gerarPDFFinanceiroSimples()">Relatório Financeiro</button>
+      <button onclick="gerarTodosRelatorios()">Gerar Todos os Relatórios</button>
+    </div>
+  </div>
+</body>
+</html>
