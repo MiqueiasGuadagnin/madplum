@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Controle de Entregas</title>
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href="controle-entregas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="../menu.js" defer></script>
+  <script src="controle-entregas.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Controle de Entregas</h1>
+    <form id="formEntrega">
+      <input type="date" id="dataCarregamento" required />
+      <select id="localCarregamento" required>
+        <option value="">Selecione o local de carregamento</option>
+      </select>
+      <input type="date" id="dataDescarga" required />
+      <select id="localDescarga" required>
+        <option value="">Selecione o local de descarga</option>
+      </select>
+      <input type="text" id="cidadeDescarga" placeholder="Cidade de Descarga" readonly required />
+      <input type="text" id="pesoLiquido" placeholder="Peso Líquido (ex: 35.900)" maxlength="6" required />
+      <label style="margin-top: 10px;">📷 Adicionar Foto(s):</label>
+      <input type="file" id="fotoInput" accept="image/*" capture="environment" multiple />
+      <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <button type="submit">Salvar Entrega</button>
+        <button type="button" id="btnEnviar">Enviar</button>
+        <button type="button" id="btnEnviarFoto">Enviar Foto</button>
+    </div>
+    
+    <div id="totalComissao"></div>  <!-- Exibe o total da comissão -->
+<hr style="margin: 30px 0;" />
+<div class="filtro-data" style="margin-bottom: 10px;">
+    <label>Data Inicial:
+      <input type="date" id="dataInicial">
+    </label>
+    <label>Data Final:
+      <input type="date" id="dataFinal">
+    </label>
+    <button id="btnFiltrar">Filtrar</button>
+  </div>
+<h2>Entregas Realizadas</h2>
+<div id="listaEntregas"></div>
+    </form>
+  </div>
+  <script src="controle-entregas.js"></script>
+</body>
+</html>
